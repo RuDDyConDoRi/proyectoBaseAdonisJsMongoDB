@@ -1,35 +1,28 @@
 'use strict'
 
 const Model = use('Model')
-const Hash = use('Hash')
 
 class User extends Model {
-  static boot () {
-    super.boot()
 
-    /**
-     * A hook to hash the user password before saving
-     * it to the database.
-     */
-    this.addHook('beforeSave', async (userInstance) => {
-      if (userInstance.dirty.password) {
-        userInstance.password = await Hash.make(userInstance.password)
-      }
-    })
+	static get createTimestamp () { return 'createdAt' }
+  	static get updateTimestamp () { return 'updatedAt' }
+  	static get deleteTimestamp () { return 'deletedAt' }	
+
+	static boot(){
+		return ['password', 'verified', 'verificationToken']
+	}
+
+	static boot () {
+    super.boot()
+    this.addHook('beforeCreate', 'User.hashPassword')
   }
 
-  /**
-   * A relationship on tokens is required for auth to
-   * work. Since features like `refreshTokens` or
-   * `rememberToken` will be saved inside the
-   * tokens table.
-   *
-   * @method tokens
-   *
-   * @return {Object}
-   */
   tokens () {
-    return this.hasMany('App/Models/Token')
+    return this.hasMany('App/Models/Token', '_id', 'userId')
+  }
+
+  images () {
+    return this.morphMany('App/Models/Image', 'imageableType', 'imageableId')
   }
 }
 
