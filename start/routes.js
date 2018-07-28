@@ -18,3 +18,14 @@ const Route = use('Route')
 Route.get('/', ({ request }) => {
   return { greeting: 'Saludando desde MongoDB con Adonisjs' }
 })
+
+
+Route.group(()=>{
+  
+  Route.post('users', 'UserController.store')
+  Route.get('users', 'UserController.index')
+  Route.get('users/:id', 'UserController.show')
+  Route.put('users/:id', 'UserController.update')
+  Route.delete('users/:id', 'UserController.delete')
+
+}).prefix('api/v0.1')
