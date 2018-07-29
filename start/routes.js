@@ -28,4 +28,6 @@ Route.group(()=>{
   Route.put('users/:id', 'UserController.update')
   Route.delete('users/:id', 'UserController.delete')
 
+  Route.post('users/upload', 'UserController.upload')
+
 }).prefix('api/v0.1')

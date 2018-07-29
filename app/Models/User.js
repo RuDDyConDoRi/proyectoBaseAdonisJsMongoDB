@@ -5,8 +5,8 @@ const Model = use('Model')
 class User extends Model {
 
 	static get createTimestamp () { return 'createdAt' }
-  	static get updateTimestamp () { return 'updatedAt' }
-  	static get deleteTimestamp () { return 'deletedAt' }	
+  static get updateTimestamp () { return 'updatedAt' }
+  static get deleteTimestamp () { return 'deletedAt' }	
 
 	static boot(){
 		return ['password', 'verified', 'verificationToken']
