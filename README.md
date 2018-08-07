@@ -1,28 +1,48 @@
-# Adonis API application
+# Proyecto API con AdonisJs
 
-This is the boilerplate for creating an API server in AdonisJs, it comes pre-configured with.
+Proyecto API server en AdonisJs, este proyecto esta preconfigurado con:
 
 1. Bodyparser
 2. Authentication
 3. CORS
 4. Lucid ORM
 5. Migrations and seeds
+6. Lucid-Mongo
+7. Redis
 
-## Setup
+## Intalación
 
-Use the adonis command to install the blueprint
+Use el siguiente comando adonis para realizar la instalación de las dependencias
 
 ```bash
-adonis new yardstick --api-only
+npm install
 ```
-
-or manually clone the repo and then run `npm install`.
-
 
 ### Migrations
 
-Run the following command to run startup migrations.
+Ejecutar el siguiente comando para iniciar las migraciones.
 
 ```js
 adonis migration:run
 ```
+### Iniciar la aplicación
+
+Ejecutar el siguiente comando adonis para iniciar el server con AdonisJs.
+
+```js
+adonis serve --dev
+```
+
+### Endpoints
+
+La aplicación tiene los siguientes endpoints de prueba:
+
+```js
+1. http://127.0.0.1:3333/								GET
+2. http://127.0.0.1:3333/api/v0.1/users				  GET
+3. http://127.0.0.1:3333/api/v0.1/users				  POST
+4. http://127.0.0.1:3333/api/v0.1/users/:id			  GET
+5. http://127.0.0.1:3333/api/v0.1/users/:id              PUT
+6. http://127.0.0.1:3333/api/v0.1/users/:id			  DELETE
+```
+

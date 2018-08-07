@@ -3,6 +3,7 @@
 const User = use('App/Models/User')
 const Helpers = use('Helpers')
 const Logger = use('Logger')
+const Env = use('Env')
 
 class UserController {
 
@@ -65,7 +66,7 @@ class UserController {
  		  name: 'custom-name.jpg'
  		})*/
 
- 		await profilePic.move(Helpers.tmpPath('./uploads'), {
+ 		await profilePic.move(Helpers.tmpPath(Env.get('DIR_UPLOAD')), {
     		name: `${new Date().getTime()}_${profilePic.clientName}`
 		})
 
