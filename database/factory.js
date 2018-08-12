@@ -13,10 +13,14 @@
 
 const Factory = use('Factory')
 
-Factory.blueprint('App/Models/User', (faker) => {
+Factory.blueprint('App/Models/User', (faker, i, data) => {
+	
+	console.log("FAKER: ", faker.username());
+    
     return {
-    name: faker.name(),
-    email: faker.email(),
-    password: faker.password()
-  }
+    	username: data.username,
+    	email: data.email,
+    	password: data.password, 
+    	faker: faker.username()
+  	}
 })

@@ -1,0 +1,20 @@
+{
+  "name": "Documentación API CNS",
+  "version": "0.1.0",
+  "description": "apidoc proyecto CNS",
+  "title": "Custom apiDoc browser title",
+  "url" : "http://127.0.0.1:3333/api/v0.1",
+  "sampleUrl": "http://127.0.0.1:3333/api/v0.1",
+  "header": {
+    "title": "Documentación API CNS",
+    "filename": "apidoc/header.md"
+  },
+  "footer": {
+    "title": "Contactos",
+    "filename": "apidoc/footer.md"
+  },
+  "template": {
+  	"withCompare": true,
+  	"withGenerator": true
+  }
+}
