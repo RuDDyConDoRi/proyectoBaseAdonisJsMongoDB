@@ -102,6 +102,42 @@ class UserController {
 		
 		return response.status(201).json(respuesta)  
 	}
+
+	async login({request, response, auth}){
+		const user = request.all()
+		const logged = await auth.attempt(user.email, user.password, true)
+		return response.json(logged)  
+	}
+
+	async register({request, response}){
+		const userInstance = await new User()
+		const user = request.all()
+
+		console.log("var1--> ", request.all());
+
+		userInstance.username = user.email
+		userInstance.email = user.email
+		userInstance.password = user.password
+
+		userInstance.save()
+
+		return response.status(201).json(userInstance)  
+	}
+
+	async profile({request, response, auth}){
+		let user = await auth.getUser()
+
+		console.log("USER---> ", user.$attributes);
+
+		const userInput = request.only(['username', 'email'])
+		user.username = userInput.username
+		user.email = userInput.email
+		await user.save()
+
+		const logged = await auth.generate(user,  true)
+
+		return response.status(201).json(logged)  
+	}
 }
 
 module.exports = UserController

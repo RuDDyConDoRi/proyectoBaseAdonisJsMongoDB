@@ -155,6 +155,10 @@ Route.group(()=>{
   	Route.delete('users/:id', 'UserController.delete')
   	Route.post('users/upload', 'UserController.upload')
 
+  	Route.post('users/login', 'UserController.login')
+  	Route.post('users/register', 'UserController.register')
+  	Route.put('users/profile/:id', 'UserController.profile').middleware(['auth:jwt'])
+
 /*
 |--------------------------------------------------------------------------
 | Sedes
