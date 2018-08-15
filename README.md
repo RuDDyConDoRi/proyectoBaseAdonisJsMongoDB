@@ -18,7 +18,7 @@ Instalar AdonisJs
 npm install -g @adonisjs/cli
 ```
 
-Use el siguiente comando adonis para realizar la instalación de las dependencias
+Use el siguiente comando para realizar la instalación de las dependencias
 
 ```bash
 npm install
@@ -33,7 +33,7 @@ adonis migration:run
 ```
 ### Iniciar la aplicación
 
-Ejecutar el siguiente comando adonis para iniciar el server con AdonisJs.
+Ejecutar el siguiente comando para iniciar el server con AdonisJs.
 
 ```js
 adonis serve --dev
