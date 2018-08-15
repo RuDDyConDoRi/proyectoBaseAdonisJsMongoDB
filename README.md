@@ -10,7 +10,13 @@ Proyecto API server en AdonisJs, este proyecto esta preconfigurado con:
 6. Lucid-Mongo
 7. Redis
 
-## Intalación
+## Instalación
+
+Instalar AdonisJs
+
+```bash
+npm install -g @adonisjs/cli
+```
 
 Use el siguiente comando adonis para realizar la instalación de las dependencias
 
@@ -33,16 +39,35 @@ Ejecutar el siguiente comando adonis para iniciar el server con AdonisJs.
 adonis serve --dev
 ```
 
+### Documentación API REST
+
+Instalar apidoc
+
+```bash
+npm install -g apidoc
+```
+
+Generar la documentación de la aplicación
+
+```bash
+apidoc -i ./start -o ./apidoc/doc
+```
+
+la documentación se encuentra en el directorio:
+
+```bash
+$ directorio_app/apidoc/doc
+```
+
 ### Endpoints
 
 La aplicación tiene los siguientes endpoints de prueba:
 
 ```js
-1. http://127.0.0.1:3333/								GET
+1. http://127.0.0.1:3333/							  GET
 2. http://127.0.0.1:3333/api/v0.1/users				  GET
 3. http://127.0.0.1:3333/api/v0.1/users				  POST
 4. http://127.0.0.1:3333/api/v0.1/users/:id			  GET
-5. http://127.0.0.1:3333/api/v0.1/users/:id              PUT
+5. http://127.0.0.1:3333/api/v0.1/users/:id           PUT
 6. http://127.0.0.1:3333/api/v0.1/users/:id			  DELETE
 ```
-
