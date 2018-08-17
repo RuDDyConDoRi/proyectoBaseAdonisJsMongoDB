@@ -64,10 +64,10 @@ $ directorio_app/apidoc/doc
 La aplicación tiene los siguientes endpoints de prueba:
 
 ```js
-1. http://127.0.0.1:3333/							  GET
+1. http://127.0.0.1:3333/						GET
 2. http://127.0.0.1:3333/api/v0.1/users				  GET
 3. http://127.0.0.1:3333/api/v0.1/users				  POST
 4. http://127.0.0.1:3333/api/v0.1/users/:id			  GET
-5. http://127.0.0.1:3333/api/v0.1/users/:id           PUT
+5. http://127.0.0.1:3333/api/v0.1/users/:id              PUT
 6. http://127.0.0.1:3333/api/v0.1/users/:id			  DELETE
 ```
